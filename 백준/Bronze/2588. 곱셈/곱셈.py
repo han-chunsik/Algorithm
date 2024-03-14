@@ -1,8 +1,6 @@
 a = int(input())
-b = int(input())
+b = input()
 
-num_list_b = list(map(int, str(b)))[::-1]
-
-for i in num_list_b:
-    print(a*i)
-print(a*b)
+for i in b[::-1]:
+    print(a*int(i))
+print(a*int(b))
