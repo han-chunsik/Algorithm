@@ -3,10 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	cat := `\    /\
- )  ( ')
-(  /  )
- \(__)|
-    `
-	fmt.Printf(cat)
+    fmt.Println("\\    /\\")
+    fmt.Println(" )  ( ')")
+    fmt.Println("(  /  )")
+    fmt.Println(" \\(__)|")
 }
