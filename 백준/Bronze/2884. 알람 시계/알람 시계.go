@@ -9,7 +9,7 @@ func main() {
 
 	fmt.Scan(&h, &m)
 
-	if m-45 < 0 {
+	if m < 45 {
 		m = 60 + (m - 45)
 		if h == 0 {
 			h = 23
