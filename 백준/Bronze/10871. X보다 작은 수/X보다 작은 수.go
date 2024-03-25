@@ -19,7 +19,8 @@ func main() {
 	inputNums, _ := reader.ReadString('\n')
 
 	strSlice := strings.Split(strings.TrimSpace(inputNums), " ")
-	intSlice := make([]int, 0, a)
+
+	result := ""
 
 	for _, s := range strSlice {
 		num, err := strconv.Atoi(s)
@@ -27,14 +28,8 @@ func main() {
 			fmt.Println(err)
 			continue
 		}
-		intSlice = append(intSlice, num)
-	}
-
-	result := ""
-
-	for i := 0; i < a; i++ {
-		if intSlice[i] < b {
-			result = result + strconv.Itoa(intSlice[i]) + " "
+		if num < b {
+			result += s + " "
 		}
 	}
 
