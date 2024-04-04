@@ -1,9 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
+	r := bufio.NewReader(os.Stdin)
+	w := bufio.NewWriter(os.Stdout)
+
 	var s string
-	fmt.Scanln(&s)
-	fmt.Print(len(s))
+
+	fmt.Fscanln(r, &s)
+	fmt.Fprint(w, len(s))
+	w.Flush()
 }
