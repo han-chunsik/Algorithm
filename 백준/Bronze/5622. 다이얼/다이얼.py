@@ -1,22 +1,9 @@
 s = input()
-t = 0
+a_list = ['ABC','DEF','GHI','JKL','MNO', 'PQRS','TUV','WXYZ']
+m = 0
 
-for j in s:
-    if 'A' <= j <= 'C':
-        n = 2
-    elif 'D' <= j <= 'F':
-        n = 3
-    elif 'G' <= j <= 'I':
-        n = 4
-    elif 'J' <= j <= 'L':
-        n = 5
-    elif 'M' <= j <= 'O':
-        n = 6
-    elif 'P' <= j <= 'S':
-        n = 7
-    elif 'T' <= j <= 'V':
-        n = 8
-    elif 'W' <= j <= 'Z':
-        n = 9
-    t += n+1
-print(t)
+for i in range(len(s)):
+    for j in range(8):
+        if s[i] in a_list[j]:
+            m+=j+3
+print(m)
