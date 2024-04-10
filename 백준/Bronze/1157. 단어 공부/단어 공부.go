@@ -8,8 +8,10 @@ import (
 )
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
-	s, _ := reader.ReadString('\n')
+	r := bufio.NewReader(os.Stdin)
+	w := bufio.NewWriter(os.Stdout)
+
+	s, _ := r.ReadString('\n')
 
 	s = strings.ToUpper(strings.TrimSpace(s))
 
@@ -33,8 +35,9 @@ func main() {
 	}
 
 	if maxCount > 1 {
-		fmt.Println("?")
+		fmt.Fprintln(w, "?")
 	} else {
-		fmt.Printf("%c\n", maxIndex)
+		fmt.Fprintf(w, "%c\n", maxIndex)
 	}
+	w.Flush()
 }
