@@ -1,18 +1,24 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strings"
 )
 
 func main() {
-	var n int
-	fmt.Scanln(&n)
+	r := bufio.NewReader(os.Stdin)
+	w := bufio.NewWriter(os.Stdout)
 
-	var s string
+	var n int
+	fmt.Fscanln(r, &n)
+
 	count := 0
 	for i := 0; i < n; i++ {
-		fmt.Scanln(&s)
+		s, _ := r.ReadString('\n')
+		s = strings.TrimSpace(s)
+
 		lastIndex := 0
 		for _, c := range s {
 			if lastIndex > strings.IndexRune(s, c) {
@@ -25,5 +31,7 @@ func main() {
 		}
 		count += 1
 	}
-	fmt.Print(count)
+	fmt.Fprint(w, count)
+
+	w.Flush()
 }
