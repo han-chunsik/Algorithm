@@ -1,16 +1,20 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strings"
 )
 
 func main() {
+	r := bufio.NewReader(os.Stdin)
+	w := bufio.NewWriter(os.Stdout)
+
 	croatia := []string{"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="}
 
-	var s string
-
-	fmt.Scan(&s)
+	s, _ := r.ReadString('\n')
+	s = strings.TrimSpace(s)
 
 	replaced := s
 
@@ -18,5 +22,6 @@ func main() {
 		replaced = strings.Replace(replaced, i, "@", -1)
 	}
 
-	fmt.Println(len(replaced))
+	fmt.Fprintln(w, len(replaced))
+	w.Flush()
 }
