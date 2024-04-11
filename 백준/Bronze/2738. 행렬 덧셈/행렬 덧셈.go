@@ -8,54 +8,55 @@ import (
 	"strings"
 )
 
-func main() {
-	r := bufio.NewReader(os.Stdin)
-	w := bufio.NewWriter(os.Stdout)
-
-	var n, m int
-
-	fmt.Fscanln(r, &n, &m)
-
-	mtxA := make([][]int, n)
-	mtxB := make([][]int, n)
-	mtxR := make([][]int, n)
-
-	for i := 0; i < n; i++ {
-		mtxA[i] = make([]int, m)
-		mtxB[i] = make([]int, m)
-		mtxR[i] = make([]int, m)
-	}
-
+func readMatrix(r *bufio.Reader, n, m int) [][]int {
+	matrix := make([][]int, n)
 	for i := 0; i < n; i++ {
 		strInput, _ := r.ReadString('\n')
 		row := strings.Split(strings.TrimSpace(strInput), " ")
+		matrix[i] = make([]int, m)
 		for j, rowStr := range row {
 			val, _ := strconv.Atoi(rowStr)
-			mtxA[i][j] = val
+			matrix[i][j] = val
 		}
 	}
+	return matrix
+}
 
+func addMatrices(a, b [][]int) [][]int {
+	n := len(a)
+	m := len(a[0])
+	result := make([][]int, n)
 	for i := 0; i < n; i++ {
-		strInput, _ := r.ReadString('\n')
-		row := strings.Split(strings.TrimSpace(strInput), " ")
-		for j, rowStr := range row {
-			val, _ := strconv.Atoi(rowStr)
-			mtxB[i][j] = val
-		}
-	}
-
-	for i := 0; i < n; i++ {
+		result[i] = make([]int, m)
 		for j := 0; j < m; j++ {
-			mtxR[i][j] = mtxA[i][j] + mtxB[i][j]
+			result[i][j] = a[i][j] + b[i][j]
 		}
 	}
+	return result
+}
 
-	for _, row := range mtxR {
+func printMatrix(w *bufio.Writer, matrix [][]int) {
+	for _, row := range matrix {
 		for _, value := range row {
 			fmt.Fprintf(w, "%d ", value)
 		}
 		fmt.Fprintln(w)
 	}
+}
+
+func main() {
+	r := bufio.NewReader(os.Stdin)
+	w := bufio.NewWriter(os.Stdout)
+
+	var n, m int
+	fmt.Fscanln(r, &n, &m)
+
+	mtxA := readMatrix(r, n, m)
+	mtxB := readMatrix(r, n, m)
+
+	mtxR := addMatrices(mtxA, mtxB)
+
+	printMatrix(w, mtxR)
 
 	w.Flush()
 }
