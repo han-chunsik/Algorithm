@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main{
     public static void main(String[] args) throws IOException {
@@ -8,17 +7,24 @@ public class Main{
 
         int n = Integer.parseInt(br.readLine());
 
-        List<Integer> sizes = Arrays.stream(br.readLine().split(" "))
-                                        .map(Integer::parseInt)
-                                        .collect(Collectors.toList());
-
+        List<Integer> sizes = new ArrayList<>();
+        
         StringTokenizer stk = new StringTokenizer(br.readLine());
+        while (stk.hasMoreTokens()) {
+            sizes.add(Integer.parseInt(stk.nextToken()));
+        }
+
+        stk = new StringTokenizer(br.readLine());
         int t = Integer.parseInt(stk.nextToken());
         int p = Integer.parseInt(stk.nextToken());
 
-        int tBundleCount = sizes.stream()
-                                    .mapToInt(size -> (size / t) + (size % t != 0 ? 1 : 0))
-                                    .sum();
+        int tBundleCount = 0;
+        for (int size: sizes) {
+            tBundleCount+=size/t;
+            if(size%t > 0) {
+                tBundleCount++;
+            }
+        }
 
         System.out.println(tBundleCount);
         System.out.println((n/p) + " " + (n%p));
