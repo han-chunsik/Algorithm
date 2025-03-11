@@ -1,3 +1,6 @@
+# 관련 문제
+- [두 개 뽑아서 더하기](https://github.com/han-chunsik/Algorithm/tree/41d83cbabc62d76e5bc107db77c1c1c124b21944/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/1/68644.%E2%80%85%EB%91%90%E2%80%85%EA%B0%9C%E2%80%85%EB%BD%91%EC%95%84%EC%84%9C%E2%80%85%EB%8D%94%ED%95%98%EA%B8%B0)
+
 # 배열
 배열은 인덱스와 값을 1:1 대응해 관리하는 자료구조로 어떤 위치에 있는 데이터든 한 번에 접근 가능
 
