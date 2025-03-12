@@ -1,5 +1,6 @@
 # 관련 문제
 - [단어순서 뒤집기](https://github.com/han-chunsik/Algorithm/tree/b77a69ccb4a710ae3cd90a12123be2c5a338fd4f/%EB%B0%B1%EC%A4%80/Bronze/12605.%E2%80%85%EB%8B%A8%EC%96%B4%EC%88%9C%EC%84%9C%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0)
+- [막대기](https://github.com/han-chunsik/Algorithm/tree/24742668f8403af6568deb32a60297f479662412/%EB%B0%B1%EC%A4%80/Bronze/17608.%E2%80%85%EB%A7%89%EB%8C%80%EA%B8%B0)
 
 # 스택
 먼저 삽입한 데이터를 가장 나중에 꺼낼 수 있는 자료구조로 FILO(First In Last Out)구조를 가지고 있음, 스택에 데이터를 삽입하는 연산은 푸시(Push) 꺼내는 연산은 팝(Pop)
