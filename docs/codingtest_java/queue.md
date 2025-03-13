@@ -1,4 +1,5 @@
 # 관련 문제
+- [카드2](https://github.com/han-chunsik/Algorithm/tree/499f36e7ce5f4fb9971a415f5335cb85624014ab/%EB%B0%B1%EC%A4%80/Silver/2164.%E2%80%85%EC%B9%B4%EB%93%9C2)
 
 # 큐
 먼저 들어간 데이터가 먼저 나오는 구조로 FIFO(first in first out)의 특징을 가지고 있음, 큐에 데이터를 삽입하는 연산은 Enqueue(Add) 꺼내는 연산은 Dequeue(Poll)
